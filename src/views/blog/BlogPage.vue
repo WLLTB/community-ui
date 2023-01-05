@@ -15,7 +15,6 @@
         </div>
       </template>
       <div>{{ blog.content }}</div>
-      <el-button class='button' type='primary'>去看看</el-button>
     </el-card>
   </div>
 </template>
@@ -54,10 +53,6 @@ onMounted(() => {
 .box-card {
   margin: 25px auto;
   width: 480px;
-}
-
-.button {
-  margin-top: 5px;
 }
 
 .update-time {
