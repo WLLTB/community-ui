@@ -3,8 +3,15 @@
     <el-card v-for='blog in state.blogList' class='box-card'>
       <template #header>
         <div class='card-header'>
-          <h3>{{ blog.title }}</h3>
-          <h3>{{ blog.title }}</h3>
+          <div class='user-info'>
+            <el-avatar size='small' src='https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'/>
+            &nbsp;
+            <div>{{blog.author}}</div>
+            <div class='update-time'>
+              <el-icon><Clock /></el-icon>
+              {{blog.updateTime}}
+            </div>
+          </div>
         </div>
       </template>
       <div>{{ blog.content }}</div>
@@ -33,17 +40,32 @@ onMounted(() => {
 
 <style scoped>
 .card-header {
-  text-align: center;
-  height: 8px;
+
+}
+
+.user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
 }
 
 .box-card {
-  text-align: center;
   margin: 25px auto;
   width: 480px;
 }
 
 .button {
   margin-top: 5px;
+}
+
+.update-time {
+  flex: 1;
+  text-align: right;
+  font-size: 10px;
+
+  color: #bbb;
+  line-height: 100%;
 }
 </style>
