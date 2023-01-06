@@ -2,12 +2,8 @@
   <div v-loading='state.loading'>
     <el-row>
       <el-col :span='12' :offset='3'>
-        <div class='blog-list flex'>
-          <el-input v-model='state.searchName' placeholder='搜索文章' clearable/>&nbsp;
-          <el-button type='primary' :icon='Search' @click='searchBlog'>搜索</el-button>
-        </div>
-        <ul v-infinite-scroll='load' infinite-scroll-distance='30' infinite-scroll-delay='100' style='overflow: auto'
-            class='infinite-list'>
+        <ul v-infinite-scroll='load' infinite-scroll-distance='30' infinite-scroll-delay='100'
+            class='infinite-list margin-top'>
           <li v-for='blog in state.blogList' class='infinite-list-item blog-list white-background'>
             <div class='flex-center user-info'>
               <el-space size='large'>
@@ -60,7 +56,6 @@
 <script setup>
 import {getBlogList} from '../../api/blog/blog.api';
 import {onMounted, reactive} from 'vue';
-import {Search, View, Star} from '@element-plus/icons-vue';
 import {RANK_ICON} from '../../constans/blog.constans';
 
 
@@ -129,16 +124,13 @@ const unLoad = () => {
 </script>
 
 <style scoped>
-.blog-box {
-  height: 33px;
-}
-
 .user-info {
   justify-content: space-between;
 }
 
 .blog-list {
-  margin: 18px auto;
+  margin: 0 auto 20px auto;
+  width: 90%;
 }
 
 .user-info-item {
@@ -153,12 +145,12 @@ const unLoad = () => {
 }
 
 .rank-list {
-  margin: 25px auto;
+  margin: 20px auto;
   width: 80%;
 }
 
 .infinite-list {
-  height: 600px;
+  height: 660px;
   list-style: none;
   overflow: auto;
 }
