@@ -7,12 +7,13 @@ export const saveBlog = async blog => {
   })
 };
 
-export const getBlogList = async (current, size) => {
+export const getBlogList = async ({current, size, name}) => {
   return Get({
     url: '/api/blog',
     params: {
       current,
       size,
+      title: name,
     },
   })
 };

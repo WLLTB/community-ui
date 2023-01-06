@@ -9,10 +9,29 @@
     justify-content: center;
 }
 
+.flex-item-center {
+    flex: 1;
+    text-align: center;
+}
+
+.flex-item-right {
+    flex: 1;
+    text-align: right;
+}
+
+.flex-item-left {
+    flex: 1;
+    text-align: left;
+}
+
 .white-background {
     border-radius: 8px;
     background-color: #FFFFFF;
     border: 1px solid #e4e7ed;
     padding: 10px 20px;
     box-shadow: 2px 8px 10px #ededed;
+}
+
+.text-center {
+    text-align: center;
 }

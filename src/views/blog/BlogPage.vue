@@ -1,42 +1,46 @@
 <template>
-  <div>
+  <div v-loading='state.loading'>
     <el-row>
       <el-col :span='12' :offset='3'>
         <div class='blog-list flex'>
-          <el-input placeholder='搜索文章' clearable/>&nbsp;
-          <el-button type='primary' :icon='Search'>搜索</el-button>
+          <el-input v-model='state.searchName' placeholder='搜索文章' clearable/>&nbsp;
+          <el-button type='primary' :icon='Search' @click='searchBlog'>搜索</el-button>
         </div>
-        <div v-for='blog in state.blogList' class='blog-list white-background'>
-          <div class='card-header'>
-            <div class='user-info'>
-              <el-space>
-                <el-avatar size='small' src='https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'/>
-                <h5>{{ blog.author }}</h5>
+        <ul v-infinite-scroll='load' infinite-scroll-distance='30' infinite-scroll-delay='100' style='overflow: auto'
+            class='infinite-list'>
+          <li v-for='blog in state.blogList' class='infinite-list-item blog-list white-background'>
+            <div class='flex-center user-info'>
+              <el-space size='large'>
+                <el-avatar size='small'
+                           src='https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'/>
+                <h3>{{ blog.author }}</h3>
+                <el-button icon='Plus' size='small' type='primary' circle></el-button>
               </el-space>
-              <div class='update-time'>
+              <el-space class='user-info-item'>
+                <el-icon>
+                  <Star/>
+                </el-icon>
+                {{ blog.marks }}
+              </el-space>
+              <el-space class='user-info-item'>
+                <el-icon>
+                  <View/>
+                </el-icon>
+                {{ blog.views }}
+              </el-space>
+              <el-space class='user-info-item'>
                 <el-icon>
                   <Clock/>
                 </el-icon>
                 {{ blog.updateTime }}
-              </div>
+              </el-space>
             </div>
-          </div>
-          <div class='title-info'>
-            <h3>{{ blog.title }}</h3>
-            <el-tag size='small'>测试</el-tag>
-          </div>
-          <div>{{ blog.content }}</div>
-        </div>
-        <div class='flex-center white-background'>
-          <el-pagination
-              background
-              layout='prev, pager, next'
-              v-model:total='state.page.total'
-              v-model:current-page='state.page.current'
-              v-model:page-size='state.page.size'
-              @current-change='getCurrentBlogList'
-          />
-        </div>
+            <div class='title-info'>
+              <h1 class='flex-item-center'>{{ blog.title }}</h1>
+              <el-tag size='small'>测试</el-tag>
+            </div>
+          </li>
+        </ul>
       </el-col>
       <el-col :span='6' :offset='1'>
         <div class='rank-list white-background'>
@@ -56,7 +60,7 @@
 <script setup>
 import {getBlogList} from '../../api/blog/blog.api';
 import {onMounted, reactive} from 'vue';
-import {Search} from '@element-plus/icons-vue';
+import {Search, View, Star} from '@element-plus/icons-vue';
 import {RANK_ICON} from '../../constans/blog.constans';
 
 
@@ -66,47 +70,80 @@ const state = reactive({
     current: 1,
     size: 5,
     total: 0,
-  }
+  },
+  loading: false,
+  searchName: undefined,
 });
 
 const initBlogList = async () => {
-  const result = await getBlogList(0, state.page.size);
+  onLoad();
+  const result = await getBlogList({
+    current: 0,
+    size: state.page.size,
+  });
+  state.blogList = result.data.data.content;
+  state.page.total = result.data.data.totalElements;
+  unLoad();
+};
+
+const getCurrentBlogList = async () => {
+  onLoad();
+  const result = await getBlogList({
+    current: state.page.current - 1,
+    size: state.page.size,
+    name: state.searchName,
+  });
+  state.blogList = result.data.data.content;
+  state.page.total = result.data.data.totalElements;
+  unLoad();
+};
+
+const searchBlog = async () => {
+  const result = await getBlogList({
+    current: 0,
+    size: state.page.size,
+    name: state.searchName,
+  });
   state.blogList = result.data.data.content;
   state.page.total = result.data.data.totalElements;
 };
 
-const getCurrentBlogList = async () => {
-  const result = await getBlogList(state.page.current - 1, state.page.size);
-  state.blogList = result.data.data.content;
+const load = () => {
+  if (state.page.size <= state.page.total) {
+    state.page.size += 1;
+  }
+  getCurrentBlogList();
 };
 
 onMounted(() => {
   initBlogList();
 });
+
+const onLoad = () => {
+  state.loading = true;
+};
+
+const unLoad = () => {
+  state.loading = false;
+};
 </script>
 
 <style scoped>
-.card-header {
-  height: 30px;
+.blog-box {
+  height: 33px;
 }
 
 .user-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .blog-list {
   margin: 18px auto;
 }
 
-.update-time {
-  flex: 1;
-  text-align: right;
+.user-info-item {
   font-size: 10px;
-
-  color: #bbb;
-  line-height: 100%;
+  color: #b5b5b5;
 }
 
 .title-info {
@@ -118,5 +155,39 @@ onMounted(() => {
 .rank-list {
   margin: 25px auto;
   width: 80%;
+}
+
+.infinite-list {
+  height: 600px;
+  list-style: none;
+  overflow: auto;
+}
+
+/* 定义滚动条样式 */
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f8f8f8;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0 rgba(240, 240, 240, .5);
+  border-radius: 10px;
+  background-color: #f8f8f8;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 gray;
+  background-color: #eae5e5;
+}
+
+.infinite-list-item {
+  height: 55px;
+}
+
+.infinite-list .infinite-list-item + .list-item {
+  margin-top: 10px;
 }
 </style>
