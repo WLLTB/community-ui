@@ -1,9 +1,18 @@
 <template>
   <div v-loading='state.loading'>
+<!--    <el-image :src='img' fit='fill' class='header-img'/>-->
+    <div class='text-center' style='position: absolute; top: 100px; left: 45%'>
+      <el-avatar :size='100'
+          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+      />
+    </div>
     <el-row>
       <el-col :span='12' :offset='3'>
-        <ul v-infinite-scroll='load' infinite-scroll-distance='30' infinite-scroll-delay='100'
-            class='infinite-list margin-top'>
+        <ul v-infinite-scroll='load'
+            infinite-scroll-distance='30'
+            infinite-scroll-delay='100'
+            class='infinite-list margin-top'
+            style='background-color: #efefef'>
           <li v-for='blog in state.blogList' class='infinite-list-item blog-list white-background'>
             <div class='flex-center user-info'>
               <el-space size='large'>
@@ -57,6 +66,7 @@
 import {getBlogList} from '../../api/blog/blog.api';
 import {onMounted, reactive} from 'vue';
 import {RANK_ICON} from '../../constans/blog.constans';
+import img from '../../assets/bg.jpg';
 
 
 const state = reactive({
@@ -130,7 +140,7 @@ const unLoad = () => {
 
 .blog-list {
   margin: 0 auto 20px auto;
-  width: 90%;
+  width: 92%;
 }
 
 .user-info-item {
@@ -155,31 +165,21 @@ const unLoad = () => {
   overflow: auto;
 }
 
-/* 定义滚动条样式 */
-::-webkit-scrollbar {
-  width: 5px;
-  background-color: #f8f8f8;
-}
-
-/*定义滚动条轨道 内阴影+圆角*/
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 0 rgba(240, 240, 240, .5);
-  border-radius: 10px;
-  background-color: #f8f8f8;
-}
-
-/*定义滑块 内阴影+圆角*/
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  box-shadow: inset 0 0 0 gray;
-  background-color: #eae5e5;
-}
-
 .infinite-list-item {
   height: 55px;
 }
 
 .infinite-list .infinite-list-item + .list-item {
   margin-top: 10px;
+}
+
+.header-img {
+  z-index:-1;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 </style>
