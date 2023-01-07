@@ -11,8 +11,7 @@
         <ul v-infinite-scroll='load'
             infinite-scroll-distance='30'
             infinite-scroll-delay='100'
-            class='infinite-list margin-top'
-            style='background-color: #efefef'>
+            class='infinite-list margin-top'>
           <li v-for='blog in state.blogList' class='infinite-list-item blog-list white-background'>
             <div class='flex-center user-info'>
               <el-space size='large'>
