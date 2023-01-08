@@ -6,9 +6,10 @@
 }
 
 .header-info {
-    left: 28%;
     position: relative;
     top:-600px;
+    margin: auto;
+    width: 600px;
 }
 
 .header-avator {
