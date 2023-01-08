@@ -37,52 +37,6 @@
     margin-top: 10px;
 }
 
-.header-avator {
-    text-align: center;
-    margin: auto;
-    top: -106px;
-    width: 75%;
-    padding: 10px;
-    font-size: 16px;
-    opacity: .88;
-    background: rgba(230, 244, 249, .8);
-    z-index: 1;
-    animation: b 1s ease-out;
-    position: relative;
-    border-radius: 10px 10px 0 0;
-}
-
-.header-text {
-    text-align: center;
-    margin: auto;
-    top: -106px;
-    width: 75%;
-    padding: 10px;
-    font-size: 16px;
-    opacity: .98;
-    background-color: #e8f2f6;
-    z-index: 1;
-    animation: b 1s ease-out;
-    position: relative;
-    border-radius: 0 0 10px 10px;
-}
-
-.site-master-description {
-    margin: 20px auto 0 auto;
-    font-size: 18px;
-    height: 50px;
-    font-weight: 700;
-    display: inline-block;
-    color: #97dffd;
-    background-color: #e8f3f7;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
-}
-
 .avator {
     width: 80px;
     height: 80px;
