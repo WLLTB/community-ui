@@ -1,10 +1,10 @@
 <template>
   <div v-loading='state.loading'>
-<!--    <el-image :src='img' fit='fill' class='header-img'/>-->
-    <div class='text-center' style='position: absolute; top: 100px; left: 45%'>
-      <el-avatar :size='100'
-          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-      />
+    <div class='header-img'>
+      <el-avatar :size='80' src='https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'/>
+    </div>
+    <div class='header-text'>
+      <h2 class='site-master-description'>有趣的灵魂终将相遇</h2>
     </div>
     <el-row>
       <el-col :span='12' :offset='3'>
@@ -173,12 +173,48 @@ const unLoad = () => {
 }
 
 .header-img {
-  z-index:-1;
+  text-align: center;
+  margin: auto;
+  top: -106px;
+  width: 75%;
+  padding: 10px;
+  font-size: 16px;
+  opacity: .88;
+  background: rgba(230, 244, 249, .8);
+  z-index: 1;
+  animation: b 1s ease-out;
   position: relative;
-  width: 100%;
-  height: 600px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  border-radius: 10px 10px 0 0;
+}
+
+.header-text {
+  text-align: center;
+  margin: auto;
+  top: -106px;
+  width: 75%;
+  padding: 10px;
+  font-size: 16px;
+  opacity: .98;
+  background-color: #e8f2f6;
+  z-index: 1;
+  animation: b 1s ease-out;
+  position: relative;
+  border-radius: 0 0 10px 10px;
+}
+
+.site-master-description {
+  margin: 20px auto 0 auto;
+  font-size: 18px;
+  height: 50px;
+  font-weight: 700;
+  display: inline-block;
+  color: #97dffd;
+  background-color: #e8f3f7;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
 }
 </style>

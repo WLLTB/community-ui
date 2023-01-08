@@ -29,6 +29,6 @@ onMounted(() => {
 
 .header-img {
   width: 100%;
-  height: 500px;
+  height: 630px;
 }
 </style>
