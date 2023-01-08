@@ -15,12 +15,12 @@
             infinite-scroll-delay='100'
             class='infinite-list margin-top'>
           <li v-for='blog in state.blogList' class='infinite-list-item blog-list white-background'>
-            <div class='flex-center user-info'>
+            <div class='flex-space-between user-info'>
               <el-space size='large'>
                 <el-avatar size='small'
                            src='https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'/>
                 <h3>{{ blog.author }}</h3>
-                <el-button icon='Plus' size='small' type='primary' circle></el-button>
+                <el-button icon='Plus' size='small' type='primary' circle style='width: 16px; height: 16px;'></el-button>
               </el-space>
               <el-space class='user-info-item'>
                 <el-icon>
