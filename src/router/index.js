@@ -1,11 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import HomeView from '../views/blog/BlogPage.vue';
 import BlogEdit from '../views/blog/BlogEdit.vue';
 import About from '../views/About.vue';
 import Video from '../views/video/VideoPage.vue';
+import VideoDetail from '../views/video/VideoDetail.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -21,6 +22,11 @@ const router = createRouter({
       path: '/video',
       name: 'video',
       component: Video,
+    },
+    {
+      path: '/video/:id',
+      name: 'videoDetail',
+      component: VideoDetail,
     },
     {
       path: '/about',

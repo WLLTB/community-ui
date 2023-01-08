@@ -59,7 +59,7 @@ const state = reactive({
     updateTime: '2005-05-31 17:35:43',
     views: 12,
     marks: 13,
-    href: 'video/1',
+    href: '/#/video/1',
   }, {
     id: '1',
     url: 'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
@@ -68,7 +68,7 @@ const state = reactive({
     updateTime: '2005-05-31 17:35:43',
     views: 12,
     marks: 13,
-    href: 'video/1',
+    href: '/#/video/1',
   }, {
     id: '1',
     url: 'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
@@ -77,7 +77,7 @@ const state = reactive({
     updateTime: '2005-05-31 17:35:43',
     views: 12,
     marks: 13,
-    href: 'video/1',
+    href: '/#/video/1',
   }],
   TOP6: [{
     id: '1',
@@ -87,7 +87,7 @@ const state = reactive({
     updateTime: '2005-05-31 17:35:43',
     views: 12,
     marks: 13,
-    href: 'video/1',
+    href: '/#/video/1',
   }, {
     id: '1',
     url: 'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
@@ -96,7 +96,7 @@ const state = reactive({
     updateTime: '2005-05-31 17:35:43',
     views: 12,
     marks: 13,
-    href: 'video/1',
+    href: '/#/video/1',
   }, {
     id: '1',
     url: 'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
@@ -105,7 +105,7 @@ const state = reactive({
     updateTime: '2005-05-31 17:35:43',
     views: 12,
     marks: 13,
-    href: 'video/1',
+    href: '/#/video/1',
   }],
 });
 

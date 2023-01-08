@@ -15,17 +15,17 @@ const MENU = [
   {
     name: '首页',
     icon: HomeFilled,
-    href: '/'
+    href: '/#/'
   },
   {
     name: '视频',
     icon: VideoCameraFilled,
-    href: '/video'
+    href: '/#/video'
   },
   {
     name: '关于',
     icon: InfoFilled,
-    href: 'about'
+    href: '/#about'
   },
 ]
 </script>
