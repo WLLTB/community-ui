@@ -1,14 +1,6 @@
 <template>
   <div v-loading='state.loading'>
-    <div class='header-avator' href='#blog'>
-      <a href='#blog'>
-        <img src='https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png' class='avator'/>
-      </a>
-    </div>
-    <div class='header-text'>
-      <h2 class='site-master-description'>有趣的灵魂终将相遇</h2>
-    </div>
-    <el-row id='blog' style='position:relative; top: -80px'>
+    <el-row id='content' style='position:relative; top: -80px'>
       <el-col :span='12' :offset='3'>
         <ul v-infinite-scroll='load'
             infinite-scroll-distance='30'
@@ -103,16 +95,6 @@ const getCurrentBlogList = async () => {
   unLoad();
 };
 
-const searchBlog = async () => {
-  const result = await getBlogList({
-    current: 0,
-    size: state.page.size,
-    name: state.searchName,
-  });
-  state.blogList = result.data.data.content;
-  state.page.total = result.data.data.totalElements;
-};
-
 const load = () => {
   if (state.page.size <= state.page.total) {
     state.page.size += 1;
@@ -123,7 +105,7 @@ const load = () => {
 const initClickMove = () => {
   document.querySelector('a').addEventListener('click', function (event) {
     event.preventDefault();
-    const blogPage = document.querySelector('#blog');
+    const blogPage = document.querySelector('#content');
     window.scrollTo({
       top: blogPage.offsetTop,
       behavior: 'smooth'
