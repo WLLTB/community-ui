@@ -1,6 +1,6 @@
 <template>
   <div v-loading='state.loading'>
-    <el-row id='content' style='position:relative; top: -80px'>
+    <el-row id='content' style='position:relative; top: -160px'>
       <el-col :span='12' :offset='3'>
         <ul v-infinite-scroll='load'
             infinite-scroll-distance='30'

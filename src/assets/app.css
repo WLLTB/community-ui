@@ -43,9 +43,10 @@
 }
 
 .menu {
-    width: 100%;
+    width: 500px;
     position: absolute;
-    top: 0;
+    top: 15px;
+    left: 10%;
     color: #FFFFFF;
 }
 
