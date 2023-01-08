@@ -1,0 +1,9 @@
+.video-page {
+    position: relative;
+    top: -160px;
+}
+
+.video-info {
+    font-size: 12px;
+    opacity: 0.6;
+}

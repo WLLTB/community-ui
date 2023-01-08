@@ -79,10 +79,17 @@
 
 .front {
     z-index: 1;
-    position: absolute;
 }
 
 a {
     color: inherit; /* 使用继承颜色 */
     text-decoration: none; /* 去除下划线 */
+}
+
+.border-radius-10 {
+    border-radius: 10px;
+}
+
+.el-button {
+    letter-spacing: 3px;
 }

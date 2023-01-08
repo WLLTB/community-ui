@@ -24,13 +24,13 @@
 }
 
 .infinite-list {
-    height: 660px;
+    margin-top: 10px;
+    height: 450px;
     list-style: none;
     overflow: auto;
 }
 
 .infinite-list-item {
-    height: 55px;
 }
 
 .infinite-list .infinite-list-item + .list-item {
@@ -38,8 +38,8 @@
 }
 
 .avator {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
     object-fit: cover;
     padding: 5px;

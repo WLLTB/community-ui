@@ -14,15 +14,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div style='height: 100vh'>
     <el-image :src='img' fit='cover' class='header-img'/>
-    <div class='header-avator' href='#blog'>
-      <a href='#content'>
-        <img src='https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png' class='avator'/>
-      </a>
-    </div>
-    <div class='header-info'>
-      <el-icon v-for='str in TITLE' size='120'>
+    <div class='header-info front'>
+      <el-icon v-for='str in TITLE' size='80'>
         <div class='header-title'>{{str}}</div>
       </el-icon>
     </div>
