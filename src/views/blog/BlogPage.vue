@@ -1,12 +1,14 @@
 <template>
   <div v-loading='state.loading'>
-    <div class='header-img'>
-      <el-avatar :size='80' src='https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'/>
+    <div class='header-avator' href='#blog'>
+      <a href='#blog'>
+        <img src='https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png' class='avator'/>
+      </a>
     </div>
     <div class='header-text'>
       <h2 class='site-master-description'>有趣的灵魂终将相遇</h2>
     </div>
-    <el-row>
+    <el-row id='blog' style='position:relative; top: -80px'>
       <el-col :span='12' :offset='3'>
         <ul v-infinite-scroll='load'
             infinite-scroll-distance='30'
@@ -65,8 +67,7 @@
 import {getBlogList} from '../../api/blog/blog.api';
 import {onMounted, reactive} from 'vue';
 import {RANK_ICON} from '../../constans/blog.constans';
-import img from '../../assets/bg.jpg';
-
+import '../../assets/blog.css';
 
 const state = reactive({
   blogList: [],
@@ -119,8 +120,20 @@ const load = () => {
   getCurrentBlogList();
 };
 
+const initClickMove = () => {
+  document.querySelector('a').addEventListener('click', function (event) {
+    event.preventDefault();
+    const blogPage = document.querySelector('#blog');
+    window.scrollTo({
+      top: blogPage.offsetTop,
+      behavior: 'smooth'
+    });
+  });
+};
+
 onMounted(() => {
   initBlogList();
+  initClickMove();
 });
 
 const onLoad = () => {
@@ -131,90 +144,3 @@ const unLoad = () => {
   state.loading = false;
 };
 </script>
-
-<style scoped>
-.user-info {
-  justify-content: space-between;
-}
-
-.blog-list {
-  margin: 0 auto 20px auto;
-  width: 92%;
-}
-
-.user-info-item {
-  font-size: 10px;
-  color: #b5b5b5;
-}
-
-.title-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.rank-list {
-  margin: 20px auto;
-  width: 80%;
-}
-
-.infinite-list {
-  height: 660px;
-  list-style: none;
-  overflow: auto;
-}
-
-.infinite-list-item {
-  height: 55px;
-}
-
-.infinite-list .infinite-list-item + .list-item {
-  margin-top: 10px;
-}
-
-.header-img {
-  text-align: center;
-  margin: auto;
-  top: -106px;
-  width: 75%;
-  padding: 10px;
-  font-size: 16px;
-  opacity: .88;
-  background: rgba(230, 244, 249, .8);
-  z-index: 1;
-  animation: b 1s ease-out;
-  position: relative;
-  border-radius: 10px 10px 0 0;
-}
-
-.header-text {
-  text-align: center;
-  margin: auto;
-  top: -106px;
-  width: 75%;
-  padding: 10px;
-  font-size: 16px;
-  opacity: .98;
-  background-color: #e8f2f6;
-  z-index: 1;
-  animation: b 1s ease-out;
-  position: relative;
-  border-radius: 0 0 10px 10px;
-}
-
-.site-master-description {
-  margin: 20px auto 0 auto;
-  font-size: 18px;
-  height: 50px;
-  font-weight: 700;
-  display: inline-block;
-  color: #97dffd;
-  background-color: #e8f3f7;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
-}
-</style>

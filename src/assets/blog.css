@@ -1,0 +1,93 @@
+.user-info {
+    justify-content: space-between;
+}
+
+.blog-list {
+    margin: 0 auto 20px auto;
+    width: 92%;
+}
+
+.user-info-item {
+    font-size: 10px;
+    color: #b5b5b5;
+}
+
+.title-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rank-list {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.infinite-list {
+    height: 660px;
+    list-style: none;
+    overflow: auto;
+}
+
+.infinite-list-item {
+    height: 55px;
+}
+
+.infinite-list .infinite-list-item + .list-item {
+    margin-top: 10px;
+}
+
+.header-avator {
+    text-align: center;
+    margin: auto;
+    top: -106px;
+    width: 75%;
+    padding: 10px;
+    font-size: 16px;
+    opacity: .88;
+    background: rgba(230, 244, 249, .8);
+    z-index: 1;
+    animation: b 1s ease-out;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+}
+
+.header-text {
+    text-align: center;
+    margin: auto;
+    top: -106px;
+    width: 75%;
+    padding: 10px;
+    font-size: 16px;
+    opacity: .98;
+    background-color: #e8f2f6;
+    z-index: 1;
+    animation: b 1s ease-out;
+    position: relative;
+    border-radius: 0 0 10px 10px;
+}
+
+.site-master-description {
+    margin: 20px auto 0 auto;
+    font-size: 18px;
+    height: 50px;
+    font-weight: 700;
+    display: inline-block;
+    color: #97dffd;
+    background-color: #e8f3f7;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+}
+
+.avator {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    object-fit: cover;
+    padding: 5px;
+    border: 2px dashed #fff;
+}
