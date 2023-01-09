@@ -25,7 +25,7 @@ const MENU = [
   {
     name: '关于',
     icon: InfoFilled,
-    href: '/#about'
+    href: '/#/about'
   },
 ]
 </script>
