@@ -4,6 +4,7 @@ import BlogEdit from '../views/blog/BlogEdit.vue';
 import About from '../views/About.vue';
 import Video from '../views/video/VideoPage.vue';
 import VideoDetail from '../views/video/VideoDetail.vue'
+import BlogDetail from '../views/blog/BlogDetail.vue';
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -12,6 +13,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/blogDetail',
+      name: 'blogDetail',
+      component: BlogDetail
     },
     {
       path: '/editBlog',

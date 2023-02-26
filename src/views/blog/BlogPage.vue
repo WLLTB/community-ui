@@ -32,7 +32,7 @@
             </el-space>
           </div>
           <div class='title-info'>
-            <h1 class='flex-item-center'>{{ blog.title }}</h1>
+            <h2 class='flex-item-center'>{{ blog.title }}</h2>
             <el-tag size='small'>测试</el-tag>
           </div>
         </li>
